@@ -1,0 +1,97 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+h1 {
+  display: block;
+  color: #0000b3;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+
+#loader {
+    z-index: 1;
+    width: 10em;
+    cursor: wait;
+    height: 10em;
+    font-size: 25px;
+    box-sizing: border-box;
+    border-top: 0.3em solid hotpink;
+    border-radius: 50%;
+    left: 43%;
+    top: 30%;
+    position: absolute;
+    margin: -76px 0 0 -76px;
+    animation: rotating 2s ease-in-out infinite;
+    --direction: 1;
+}
+
+
+#loader::before,
+#loader::after {
+    content: '';
+    position: absolute;
+    cursor: wait;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+#loader::before {
+    border-top: solid dodgerblue;
+    cursor: wait;
+    transform: rotate(120deg);
+}
+
+#loader::after {
+    border-top: solid gold;
+    cursor: wait;
+    transform: rotate(240deg);
+}
+
+#loader span {
+    position: absolute;
+    cursor: wait;
+    color: black;
+    width: inherit;
+    height: inherit;
+    text-align: center;
+    line-height: 10em;
+    font-family: sans-serif;
+    animation: rotating 2s linear infinite;
+    --direction: -1;
+}
+
+@keyframes rotating {
+    50% {
+        transform: rotate(calc(180deg * var(--direction)));
+    }
+
+    100% {
+        transform: rotate(calc(360deg * var(--direction)));
+    }
+}
+
+#link {
+  text-decoration: none;
+}
+
+#myDiv h1 {
+  text-align: center;
+}
+
+#myDiv img {
+  weight: 700px;
+  height: 500px;
+  color: white;
+}
